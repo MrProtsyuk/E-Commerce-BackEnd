@@ -15,10 +15,6 @@ router.get('/', (req, res) => {
       {
       model: Product,
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
-      },
-      {
-        model: ProductTag,
-        attributes: ['id', 'product_tag', 'tag_id'],
       }
     ]
   })
@@ -31,7 +27,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  Category.findAll({
+  Category.findOne({
     attributes: [
       'id',
       'category_name'
@@ -41,10 +37,6 @@ router.get('/:id', (req, res) => {
       {
       model: Product,
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
-      },
-      {
-        model: ProductTag,
-        attributes: ['id', 'product_tag', 'tag_id'],
       }
     ]
   })
